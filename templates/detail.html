@@ -11,10 +11,25 @@
     <title>{{render_data["num"]}} x {{render_data["what"]}} - Gachabits API</title>
   </head>
   <body>
-    
+    <h1>{{render_data["num"]}} x {{render_data["what"]}}</h1>
+    <ol id="list">
     {% for i in render_data["results"]%}
 		<li>{{i}}</li>
 		{% endfor %}    
     </ol>
+    <script>
+        let colors = ["red", "yellow", "green", "blue"]
+
+        let titleLetters = document.getElementById("list").children
+        let c = 0
+        for (const i in titleLetters) {
+            c = c + 1
+            if (c == 4) {
+                c = 0
+            }
+            titleLetters[i].className += ` ${colors[c]}`
+            //titleLetters[i].className += ` ${colors[Math.floor(Math.random() * colors.length)]}`
+        }
+    </script>
   </body>
 </html>
