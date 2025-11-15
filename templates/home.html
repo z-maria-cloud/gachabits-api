@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Gachabits API</title>
+  </head>
+  <body>
+    <h1>Gachabits API Index</h1>
+    <ol>
+    {% for i in render_data["gacha_keys"]%}
+		<li>
+          <a href="gacha/{{i}}/1">{{i}} x 1</a> or <a href="gacha/{{i}}/10">{{i}} x 10</a> or <a href="test/{{i}}">test</a>
+        </li>
+		{% endfor %}    
+    </ol>
+
+  </body>
+</html>

@@ -26,12 +26,28 @@ Run `flask --app gachabits run -p 3000` to start the server. This command starts
 
 ### What's Inside Gachabits?
 
-Performing a GET request to the server's root shows a list of all the keys available inside Gachabits.
+Gachabits's core is a single JSON file that basically looks like this:
+
+```
+...
+"weapons": ["sword", "bow", "crossbow", "axe", "dagger", "wand", "staff"],
+"rarity": ["common", "uncommon", "rare", "mythic", "legendary"],
+"jewelry": ["necklace", "earrings", "pendant", "bracelet", "ring", "hairpin"],
+...
+```
+
+I wrapped this file inside a simple API so that it's easier to use.
+
+### Project root
+
+Visiting the server's root shows a list of all the word lists available inside Gachabits.
+
+For every list, you can easily get 1 random result, 10 random results, or you can select `test` to check the entire list's contents.
 
 ### Retrieving random things
 
-Performing a GET following this template `/gacha/[what]/[how many]` you will obtain random entries from the API.
+Performing a GET request following this template `/gacha/[what]/[how many]` you will obtain random entries from the API.
 
 For example, `/gacha/colors/5` will return 5 random colors.
 
-There's a limit of 20 maximum results for API request.
+There's a limit of 20 maximum results per API request.
