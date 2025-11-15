@@ -11,7 +11,18 @@
     <title>Gachabits API</title>
   </head>
   <body>
-    <h1>Gachabits API Index</h1>
+    <div id="title" content="Gachabits API">
+        <div>G</div>
+        <div>a</div>
+        <div>c</div>
+        <div>h</div>
+        <div>a</div>
+        <div>b</div>
+        <div>i</div>
+        <div>t</div>
+        <div>s</div>
+        <div class="space">API</div></div>
+    <ol>
     <ol>
       {% for i in render_data["gacha_keys"]%}
       <li>
@@ -22,5 +33,13 @@
       </li>
       {% endfor %}
     </ol>
+    <script>
+        let colors = ["red", "yellow", "green", "blue"]
+
+        let titleLetters = document.getElementById("title").children
+        for (const i in titleLetters) {
+            titleLetters[i].className += ` ${colors[Math.floor(Math.random() * colors.length)]}`
+        }
+    </script>
   </body>
 </html>
