@@ -20,4 +20,4 @@ pip install Flask
 
 Enter the Python virtual environment with `. env/bin/activate`.
 
-Use `flask --app gachabits run -p 3000`. This command starts the server on port 3000.
+Run `flask --app gachabits run -p 3000` to start the server. This command starts the server on port 3000.
