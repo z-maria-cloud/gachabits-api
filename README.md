@@ -20,21 +20,23 @@ Gachabits's core is a single JSON file that basically looks like this:
 
 I wrapped this file inside a simple API so that it's easier to use.
 
-## Installation
+## Dependencies
 
-This project must be run inside a Python virtual environment.
+This project must be run inside a Python virtual environment. To create the development environment:
 
 ```
 python3 -m venv env
 . env/bin/activate
-pip install Flask
+pip install -r requirements.txt
 ```
 
 ## Starting the server
 
 Enter the Python virtual environment with `. env/bin/activate`.
 
-Run `flask --app gachabits run -p 3000` to start the server (**this command must be used for testing purposes only**). This command starts the server on port 3000.
+Run `flask --app gachabits run -p 3000` to start the server (**this command must be used for testing purposes only; in a production environment, make sure to use a WSGI server**).
+
+The above command starts the server on port 3000.
 
 ## Using the API
 
@@ -59,3 +61,7 @@ By choosing the **get API link** option, you will obtain a link that follows thi
 For example, `/gacha/colors/5` will return 5 random colors.
 
 There's a limit of 20 maximum results per API request.
+
+### Checking the word count
+
+The `/word-count` route will return individual word counts for every list, along with the total words contained in the core JSON file.

@@ -66,6 +66,9 @@ def gacha_test(what):
 @app.route("/word-count")
 def gacha_stats():
 	data = {}
+	total = 0
 	for i in keys:
 		data[i] = len(gacha[i])
+		total += len(gacha[i])
+	data["Total Words"] = total
 	return data
