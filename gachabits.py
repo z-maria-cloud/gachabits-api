@@ -18,7 +18,7 @@ with open('gachabits.json', 'r') as file:
 
 @app.route("/")
 def home_route():
-	return gacha
+	return sorted(list(gacha.keys()))
 
 @app.route("/gacha/<what>/<int:num>")
 def main_func(what, num):
