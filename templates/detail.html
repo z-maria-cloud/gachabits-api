@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{render_data["num"]}} x {{render_data["what"]}} - Gachabits API</title>
+  </head>
+  <body>
+    <h1>Gachabits API</h1>
+    <ol>
+    {% for i in render_data["results"]%}
+		<li>{{i}}</li>
+		{% endfor %}    
+    </ol>
+
+  </body>
+</html>

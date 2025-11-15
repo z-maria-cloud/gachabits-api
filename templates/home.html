@@ -9,12 +9,14 @@
   <body>
     <h1>Gachabits API Index</h1>
     <ol>
-    {% for i in render_data["gacha_keys"]%}
-		<li>
-          <a href="gacha/{{i}}/1">{{i}} x 1</a> or <a href="gacha/{{i}}/10">{{i}} x 10</a> or <a href="test/{{i}}">test</a>
-        </li>
-		{% endfor %}    
+      {% for i in render_data["gacha_keys"]%}
+      <li>
+        <a href="gacha/user/{{i}}/1">{{i}} x 1</a> or
+        <a href="gacha/user/{{i}}/10">{{i}} x 10</a> or
+        <a href="test/{{i}}">test</a> or
+        <a href="gacha/api/{{i}}/1">get API link</a>
+      </li>
+      {% endfor %}
     </ol>
-
   </body>
 </html>
