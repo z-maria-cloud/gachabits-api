@@ -12,19 +12,20 @@ def r(items):
 def g(what):
 	return r(gacha[what])
 
-limit = 20
-
 # load core json file
 
 gacha = ""
 with open('gachabits.json', 'r') as file:
 	gacha = json.load(file)
 
+keys = sorted(list(gacha.keys()))
+limit = 20
+
 # list all the json file keys in the website's root
 
 @app.route("/")
 def gacha_home():
-	return render_template("home.html", render_data={"gacha_keys": sorted(list(gacha.keys()))})
+	return render_template("home.html", render_data={"gacha_keys": keys})
 
 # main api function
 
@@ -61,3 +62,10 @@ def gacha_main(what, num, req_type):
 @app.route("/test/<what>")
 def gacha_test(what):
 	return gacha[what]
+
+@app.route("/word-count")
+def gacha_stats():
+	data = {}
+	for i in keys:
+		data[i] = len(gacha[i])
+	return data

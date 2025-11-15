@@ -18,35 +18,38 @@
     <title>Gachabits API</title>
   </head>
   <body>
-    <h1>Gachabits API</h1>
+    <div class="header">
+      <h1>Gachabits API</h1>
+      <a href="word-count">» Word Count</a>
+    </div>
+
     <ol id="list">
       {% for i in render_data["gacha_keys"]%}
       <li>
-        <a href="gacha/user/{{i}}/1">{{i}} x 1</a> or
-        <a href="gacha/user/{{i}}/10">{{i}} x 10</a> or
-        <a href="test/{{i}}">test</a> or
-        <a href="gacha/api/{{i}}/1">get API link</a>
+        <a href="gacha/user/{{i}}/1">🎲️{{i}} x 1</a> or
+        <a href="gacha/user/{{i}}/10">🎲️{{i}} x 10</a> or
+        <a href="test/{{i}}">⚙️test</a> or
+        <a href="gacha/api/{{i}}/1">🔗️get API link</a>
       </li>
       {% endfor %}
     </ol>
     <script>
       let colors = ["red", "yellow", "green", "blue"];
 
-      let titleLetters = document.getElementById("list").children;
+      let listElements = document.getElementById("list").children;
       let c = 0;
-      for (const i in titleLetters) {
+      for (const i in listElements) {
         c = c + 1;
         if (c == 4) {
           c = 0;
         }
-        //titleLetters[i].className += ` ${colors[c]}`;
         let c2 = 0;
-        for (const j in titleLetters[i].children) {
+        for (const j in listElements[i].children) {
           c2 = c2 + 1;
           if (c2 == 4) {
             c2 = 0;
           }
-          titleLetters[i].children[j].className += ` ${colors[c2]}`;
+          listElements[i].children[j].className += ` ${colors[c2]}`;
         }
       }
     </script>

@@ -33,10 +33,6 @@ h1 {
   color: white;
 }
 
-a::before {
-  content: "🔗️";
-}
-
 .red {
   color: var(--red);
 }
@@ -54,7 +50,6 @@ a::before {
 }
 
 li {
-  font-weight: 700;
   width: fit-content;
   padding: 0 5px;
   border-radius: 3px;
@@ -64,4 +59,14 @@ li {
 
 ul li {
   color: white;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+}
+
+.header a {
+  margin: 0 1.5rem;
+  text-decoration: underline;
 }
