@@ -77,6 +77,8 @@ The `/batch` endpoint accepts POST requests. You can create an object with any n
 
 ```
 
+**Build your objects like this:** `{"human_readable_label": "[gachabits list name]", "another_human_readable_label": "[gachabits list name]", ecc}`
+
 You can make a simple POST request with `curl`. Don't forget to add your own custom object inside `data`!
 
 ```
@@ -85,3 +87,5 @@ curl --header "Content-Type: application/json" \
 --data '{"weapon_rarity":"rarity","weapon_type":"weapons"}' \
 http://localhost:3000/batch
 ```
+
+**Note: if you get a response object that is missing something, then one of the word lists you specified does not exist.**
