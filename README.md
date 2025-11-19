@@ -65,3 +65,23 @@ There's a limit of 20 maximum results per API request.
 ### Checking the word count
 
 The `/word-count` route will return individual word counts for every list, along with the total words contained in the core JSON file.
+
+### Obtaining multiple different words in the same request
+
+The `/batch` endpoint accepts POST requests. You can create an object with any number of properties, for example the `{"weapon_rarity":"rarity","weapon_type":"weapons"}` object will return various combinations like these:
+
+```
+{"weapon_rarity":"common","weapon_type":"dagger"}
+{"weapon_rarity":"uncommon","weapon_type":"bow"}
+{"weapon_rarity":"legendary","weapon_type":"crossbow"}
+
+```
+
+You can make a simple POST request with `curl`. Don't forget to add your own custom object inside `data`!
+
+```
+curl --header "Content-Type: application/json" \
+--request POST \
+--data '{"weapon_rarity":"rarity","weapon_type":"weapons"}' \
+http://localhost:3000/batch
+```

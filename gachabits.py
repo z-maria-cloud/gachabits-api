@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request, url_for, jsonify
 import random
 import json
 
@@ -72,3 +72,15 @@ def gacha_stats():
 		total += len(gacha[i])
 	data["Total Words"] = total
 	return data
+
+@app.route("/batch", methods=["POST"])
+def gacha_batch():
+	known_keys = []
+	final = {}
+	for i in request.json:
+		batch_name = i
+		batch_gacha_key = request.json[i]
+		if (batch_gacha_key in keys):
+			final[batch_name] = g(batch_gacha_key)
+	
+	return final
